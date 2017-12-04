@@ -43,7 +43,6 @@ canvas.addEventListener('mouseout', e => {
     mouseActive = false;
 });
 
-
 class Circle {
     constructor(x, y, radius, initialSpeed){
         this.oscillateFactor = .1;
