@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
-canvas.height = window.innerWidth;
+canvas.height = window.innerHeight;
 const c = canvas.getContext('2d');
 let mouseActive = false;
 
@@ -42,6 +42,7 @@ canvas.addEventListener('mousemove', e => {
 canvas.addEventListener('mouseout', e => {
     mouseActive = false;
 });
+
 
 class Circle {
     constructor(x, y, radius, initialSpeed){
@@ -93,9 +94,9 @@ class Circle {
             Math.abs(mouse.subtract(this.pos).x) <  this.triggerDistance &&  
             Math.abs(mouse.subtract(this.pos).y) < this.triggerDistance )
         {
-                if(this.radius <= this.maxRadius){
-                    this.radius += 5;
-                }
+            if(this.radius <= this.maxRadius){
+                this.radius += 5;
+            }
                 
         }else if (this.radius >= this.initRadius){
             this.radius -= 5;
@@ -107,7 +108,7 @@ class Circle {
 
 //Generate circles with random starting velocities
 const circles = [];
-for(let i = 0; i < 1000; i++) {
+for(let i = 0; i < 500; i++) {
     circles.push(new Circle());
 }
 
